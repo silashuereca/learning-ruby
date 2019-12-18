@@ -1,7 +1,22 @@
 <html>
   <body>
     <h1>
-      My secret number is <%= number %>
+      My secret number is...
     </h1>
+    <p>
+     Your number is <%=
+          if guess > number
+            tooHigh
+          elsif guess < number 
+            tooLow
+          else guess == number
+            correct
+          end
+        %>
+    </p>
+    <form>
+      <input type='text' name='guess' />
+      <input type='submit' value='Guess!' />
+    </form>
   </body>
 </html>

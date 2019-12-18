@@ -4,5 +4,8 @@ require 'sinatra/reloader'
 number = rand(100)
 
 get '/' do
-    erb :index, :locals => {:number => number}
+    guess = params["guess"].to_i
+    erb :index, :locals => {:number => number, :tooHigh => "Too High", :tooLow => "Too Low", :correct  => "Correct", :guess => guess}
+
+    
 end
